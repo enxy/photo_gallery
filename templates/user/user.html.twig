@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'userMenu.html.twig' %}
+    <div class="container">
+        <div class="container">
+            <h4>{{ 'welcome.label'|trans }} {{ login }}</h4>
+            <h2>{{ 'your.photos.label'|trans }}</h2><br/><br/><br/><br/>
+            <div class="row">
+                 {% if photos empty %}
+                {% for photo in photos %}
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="{{ path('select_photo', {'id' : photo.0.idPhoto}) }}">
+                                <img src="{{ asset('uploads/photos/'~photo.path)}}" alt="Unable to load photo, sorry :(">
+                            </a>
+                            <div class="caption">
+                                <p>{{ photo.0.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

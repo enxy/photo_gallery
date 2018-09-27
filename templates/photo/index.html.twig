@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        {% include ('adminMenu.html.twig') %}
+    {% elseif is_granted('ROLE_USER') %}
+        {% include 'userMenu.html.twig' %}
+    {% else %}
+        {% include 'menu.html.twig' %}
+    {% endif %}
+    <div class="container">
+        <h1>
+            {{ 'title.photo_gallery'|trans }}
+        </h1>
+        {% if(paginator.data) %}
+            <div class="gallery cf">
+                {% for photo in paginator.data%}
+                    <a href="{{ path('select_photo', {'id' : photo.idPhoto}) }}">
+                        <div><img class="gallery_item" src="{{ asset('uploads/photos/'~photo.path) }}" alt=""></div>
+                    </a>
+                {% endfor %}
+            </div>
+
+        {% else %}
+            {{ 'There are no images.' }}
+        {% endif %}
+    </div>
+    {% include 'default/_paginator.html.twig' with {
+    paginator: paginator,
+    route_name: 'page_index',
+    } %}
+{% endblock %}

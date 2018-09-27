@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% include 'adminMenu.html.twig' %}
+    <div class="container">
+        <h2>{{ 'welcome.admin'|trans }}</h2>
+    </div>
+    <br/><br/>
+    <div class="container">
+        <h3><a href="{{ path('show_users') }}">{{ 'manage.users'|trans }}</a></h3>
+    </div>
+    <br/><br/>
+    <div class="container">
+        <h3><a href="{{ path('page_index', {'page' : 1}) }}">{{ 'manage.photos'|trans }}</a></h3>
+    </div>
+
+{% endblock %}

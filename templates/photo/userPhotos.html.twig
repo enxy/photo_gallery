@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        {%  include 'adminMenu.html.twig' %}
+    {% elseif is_granted('ROLE_USER') %}
+        {%  include 'userMenu.html.twig' %}
+    {% else %}
+        {% include 'menu.html.twig' %}
+    {% endif %}
+<div class="container">
+    <h2>Your Photos</h2><br/><br/><br/><br/>
+    <div class="row">
+    {% for photo in photos %}
+                <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="{{ path('select_photo', {'id' : photo.idPhoto}) }}">
+                                <img src="{{ asset('uploads/photos/'~photo.path) }}" alt="{{ photo.description }}">
+                            </a>
+                                <div class="caption">
+                                    <p>{{ photo.description }}</p>
+                                </div>
+                        </div>
+                </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,34 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{ path('page_index', {'page' : 1}) }}">PhotoGallery</a>
+        </div>
+        {% if is_granted('ROLE_ADMIN') %}
+            <ul class="nav navbar-nav">
+                <li><a href="{{ path('show_users') }}">{{ 'manage.users'|trans }}</a></li>
+            </ul>
+        {% endif %}
+        <ul class="nav navbar-nav">
+            <li><a href="{{ url('add_photo') }}">{{ 'add.photo.label'|trans }}</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li><a href="{{ path('user_index') }}">{{ 'your.photos.label'|trans }}</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
+                </ul>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ 'your.account.label'|trans }} <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ path('user_account') }}">{{ 'settings.label'|trans }}</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="{{ url('auth_logout') }}" title="{{ 'auth.logout.label'|trans }}">
+                            <span class="glyphicon glyphicon-log-out"></span>{{ 'auth.logout.label'|trans }}
+                        </a></li>
+                </ul>
+            </div>
+        </ul>
+    </div>
+</nav>

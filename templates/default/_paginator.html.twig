@@ -1,0 +1,17 @@
+{% if paginator.page > 1 %}
+    {% set previous = (paginator.page - 1) %}
+    <a href="{{ url('page_index', {'page': previous}) }}" title="{{ 'label.nav.prev'|trans }}">
+       {{ 'labels.nav.prev'|trans }}
+        {{ previous }}
+    </a>
+{%  endif %}
+{%  set current = paginator.page %}
+    <a href="{{ url('page_index', {'page': current}) }}" title="{{ 'label.nav.prev'|trans }}">
+        {{ current }}
+    </a>
+{% if paginator.page < paginator.pages_number %}
+    {% set next = (paginator.page + 1) %}
+    <a href="{{ url('page_index', {'page': next}) }}" title="{{ 'label.nav.next'|trans }}">
+    {{ next }}
+    </a>
+{% endif  %}

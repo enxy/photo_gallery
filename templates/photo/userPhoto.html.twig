@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        {%  include 'adminMenu.html.twig' %}
+    {% elseif is_granted('ROLE_USER') %}
+        {%  include 'userMenu.html.twig' %}
+    {% else %}
+        {% include 'menu.html.twig' %}
+    {% endif %}
+    <div>
+        <img class="photo-edit" src="{{ asset('uploads/photos/'~photo.path) }}" alt="{{ photo.description }}">
+        <div id="tags">
+            <h3>{{ 'label.tags'|trans }}</h3>
+            {% for tag in photo.tag_name %}
+            <button type="button" class="btn .btn-sm">{{ tag.name }}</button>
+            {% endfor %}
+        </div>
+        <div id="opinion" class="panel panel-primary">
+            <h3>{{ 'label.grade'|trans }}</h3>
+            {{ 'Average rating: '~ totalGrade  ~ '/5 Based on: ' ~ numOfGrades ~' votes'}}<br/><br/>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {{ form_start(form2) }}
+                    {{ form_widget(form2) }}
+                <input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-success" />
+                {{ form_end(form2) }}
+            {% else %}
+                {{ 'To grade photo you have to LogIn or Register!' }}
+            {% endif %}
+            <h3>{{ 'label.comment'|trans }}</h3>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+            <input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-success" />
+            {{ form_end(form) }}
+        {% else %}
+            {{ 'To add comments you have to LogIn or Register!' }}
+        {% endif %}
+        </div>
+            {% if commentData is empty %}
+                {{ 'There is no comments to show.' }}
+            {% endif %}
+            {% for data in commentData %}
+                <p>{{ data.comment.comment }}</p>
+                <p><strong><em>Posted by:  </em></strong>{{ data.comment.username }} <strong><em> on {{ data.comment.dateAdded }}</em></strong></p><br>
+            {% endfor %}
+        </div>
+        <br/><br/><br/>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a href="{{ path('delete_photo', {'id': id}) }}" data-toggle="tooltip" data-placement="top" title="All photo data and linked tags will be deleted"><input type="button" value="{{ 'label.delete'|trans }}" class="btn btn-danger"></a>
+        <a href="{{ path('edit_photo', {'id': id}) }}" data-toggle="tooltip" data-placement="top" title="Select to edit photo data or linked tags"><input type="button" value="{{ 'label.edit'|trans }}" class="btn btn-success"></a>
+    {% endif %}
+        </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="active" class="navbar-brand" href="{{ path('page_index', {'page':1}) }}" title="{{ 'gallery.label'|trans }}">{{ 'gallery.label'|trans }}</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="{{ path('admin_index') }}" title="{{ 'admin.panel.label'|trans }}">{{ 'admin.panel.label'|trans }}</a></li>
+        </ul>
+        {#<ul class="nav navbar-nav">#}
+            {#<li><a href="{{ path('show_users') }}">Manage users</a></li>#}
+        {#</ul>#}
+        {#<ul class="nav navbar-nav">#}
+            {#<li><a href="{{ path('page_index', {'page' : 1}) }}">Edit Photos</a></li>#}
+        {#</ul>#}
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ url('auth_logout') }}" title="{{ 'auth.logout.label'|trans }}"><span class="glyphicon glyphicon-log-out"></span>{{ 'auth.logout.label'|trans }}</a></li>
+        </ul>
+    </div>
+</nav>

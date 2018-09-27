@@ -1,0 +1,25 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="{{ path('page_index', {'page' : 1}) }}" title="{{ 'gallery.label'|trans }}">{{ 'gallery.label'|trans }}</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="{{ url('auth_logout') }}" title="{{ 'auth.logout.label'|trans }}">
+                    <span class="glyphicon glyphicon-log-out"></span>{{ 'auth.logout.label'|trans }}
+                </a>
+            {% else %}
+                <li>
+                    <a href="{{ url('auth_login') }}" title="{{ 'auth.login.label'|trans }}">
+                        <span class="glyphicon glyphicon-log-in"></span> {{ 'auth.login.label'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('register_index') }}" title="{{ 'signUp.label'|trans }}">
+                        <span class="glyphicon glyphicon-user"></span> {{ 'signUp.label'|trans }}
+                    </a>
+                </li>
+            {% endif %}
+            </ul>
+    </div>
+</nav>

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% include 'adminMenu.html.twig' %}
+<div class="container">
+    <table class="table table-striped">
+        <h1>Edit data of user {{ user.id }} :</h1><br/><br/><br/>
+        <thead>
+        <h3>{{'user.data'|trans}}</h3>
+        <tr>
+            <th>{{ 'label.login'|trans }}</th>
+            <th>{{ 'firstname.label'|trans }}</th>
+            <th>{{ 'lastname.label'|trans }}</th>
+            <th>{{ 'email.label'|trans }}</th>
+            <th>{{ 'role.label'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+            {{ form_start(form, { method: 'post', action: url('edit_user', {'id':user.id}) }) }}
+            <tr>
+                <td>{{ form_widget(form.login) }}</td>
+                <td>{{ form_widget(form.name) }}</td>
+                <td>{{ form_widget(form.surname) }}</td>
+                <td>{{ form_widget(form.email) }}</td>
+                <td>{{ form_widget(form.role_id) }}</td>
+            </tr>
+                <tr>
+                    <td><input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-success" /></td>
+                </tr>
+            {{ form_end(form) }}
+        </tbody>
+    </table>
+    <table class="table table-striped">
+        <h3>{{'user.password'|trans}}</h3>
+        <tbody>
+        {{ form_start(form2, { method: 'post', action: url('edit_user', {'id': user.id}) }) }}
+            <tr>
+                <td>{{ form_widget(form2.password) }}</td>
+            </tr>
+        <tr><td><input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-success" /></td></tr>
+        {{ form_end(form) }}
+        </tbody>
+    </table>
+    <a href="{{ path('show_users') }}"><input type="button" value="{{ 'label.back_to_list'|trans }}" class="btn btn-success"/></a>
+</div>
+{% endblock %}

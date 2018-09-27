@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% include 'userMenu.html.twig' %}
+    <div class="container">
+        <table class="table table-striped">
+            <h1>{{ 'edit.account.data'|trans }}</h1><br/><br/><br/>
+            <h3>Login: {{ user }}</h3>
+            <tbody>
+            {{ form_start(form1, { method: 'post', action: url('user_account') }) }}
+            <tr>
+                <td>{{ form_widget(form1) }}</td>
+            </tr>
+            <tr><td><input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-success" /></td></tr>
+            {{ form_end(form1) }}
+            </tbody>
+            <tbody>
+            {{ form_start(form2, { method: 'post', action: url('user_account') }) }}
+            <tr>
+                <td>{{ form_widget(form2) }}</td>
+            </tr>
+            <tr><td><input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-success" /></td></tr>
+            {{ form_end(form2) }}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="title.bookmarks_list">
+                <source>title.bookmarks_list</source>
+                <target>Bookmarks List</target>
+            </trans-unit>
+            <trans-unit id="title.photo_gallery">
+                 <source>title.photo_gallery</source>
+                 <target>Photo Gallery</target>
+            </trans-unit>
+            <trans-unit id="auth.logout.label">
+                 <source>auth.logout.label</source>
+                 <target>LogOut</target>
+            </trans-unit>
+            <trans-unit id="labels.nav.prev">
+                  <source>labels.nav.prev</source>
+                  <target>Previous page</target>
+            </trans-unit>
+            <trans-unit id="labels.nav.next">
+                 <source>labels.nav.next</source>
+                 <target>Next page</target>
+            </trans-unit>
+            <trans-unit id="title.auth_login">
+                  <source>title.auth_login</source>
+                  <target>User login</target>
+            </trans-unit>
+            <trans-unit id="auth.login.label">
+                  <source>auth.login.label</source>
+                  <target>LogIn</target>
+            </trans-unit>
+            <trans-unit id="label.login">
+                   <source>label.login</source>
+                   <target>Login</target>
+            </trans-unit>
+            <trans-unit id="label.password">
+                   <source>label.password</source>
+                   <target>Password</target>
+            </trans-unit>
+            <trans-unit id="action.login">
+                <source>action.login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="title.register">
+                <source>title.register</source>
+                <target>Register</target>
+            </trans-unit>
+            <trans-unit id="signUp.label">
+                <source>signUp.label</source>
+                <target>SignUp</target>
+            </trans-unit>
+            <trans-unit id="action.save">
+                 <source>action.save</source>
+                 <target>Save</target>
+            </trans-unit>
+            <trans-unit id="gallery.label">
+                  <source>gallery.label</source>
+                  <target>Photo Gallery</target>
+            </trans-unit>
+            <trans-unit id="admin.panel.label">
+                   <source>admin.panel.label</source>
+                   <target>Admin panel</target>
+            </trans-unit>
+            <trans-unit id="welcome.admin">
+                   <source>welcome.admin</source>
+                   <target>Welcome to Admin Panel</target>
+            </trans-unit>
+            <trans-unit id="manage.users">
+                   <source>manage.users</source>
+                   <target>Manage users</target>
+            </trans-unit>
+            <trans-unit id="manage.photos">
+                   <source>manage.photos</source>
+                   <target>Delete/Edit Photos</target>
+            </trans-unit>
+            <trans-unit id="welcome.label">
+                    <source>welcome.label</source>
+                    <target>Welcome</target>
+             </trans-unit>
+             <trans-unit id="your.photos.label">
+                    <source>your.photos.label</source>
+                    <target>Your Photos</target>
+             </trans-unit>
+             <trans-unit id="add.photo.label">
+                    <source>add.photo.label</source>
+                    <target>Add photo</target>
+             </trans-unit>
+             <trans-unit id="your.account.label">
+                    <source>your.account.label</source>
+                    <target>Your account</target>
+             </trans-unit>
+             <trans-unit id="settings.label">
+                    <source>settings.label</source>
+                    <target>Settings</target>
+             </trans-unit>
+             <trans-unit id="edit.account.data">
+                    <source>edit.account.data</source>
+                    <target>Edit your data here:</target>
+             </trans-unit>
+             <trans-unit id="firstname.label">
+                    <source>firstname.label</source>
+                    <target>Firstname</target>
+             </trans-unit>
+             <trans-unit id="lastname.label">
+                    <source>lastname.label</source>
+                    <target>Lastname</target>
+             </trans-unit>
+             <trans-unit id="email.label">
+                    <source>email.label</source>
+                    <target>Email</target>
+             </trans-unit>
+            <trans-unit id="label.back_to_list">
+                    <source>label.back_to_list</source>
+                    <target>Go back</target>
+             </trans-unit>
+             <trans-unit id="label.yes">
+                    <source>label.yes</source>
+                    <target>yes</target>
+             </trans-unit>
+             <trans-unit id="label.no">
+                    <source>label.no</source>
+                    <target>no</target>
+             </trans-unit>
+             <trans-unit id="label.is_public">
+                    <source>label.is_public</source>
+                    <target>Is public?</target>
+             </trans-unit>
+             <trans-unit id="label.description">
+                    <source>label.description</source>
+                    <target>Description:</target>
+             </trans-unit>
+             <trans-unit id="label.path">
+                    <source>label.path</source>
+                    <target>Path:</target>
+             </trans-unit>
+             <trans-unit id="label.tags">
+                    <source>label.tags</source>
+                    <target>Tags:</target>
+             </trans-unit>
+             <trans-unit id="label.file">
+                    <source>label.file</source>
+                    <target>Chose file</target>
+             </trans-unit>
+             <trans-unit id="label.id">
+                    <source>label.id</source>
+                    <target>User id</target>
+             </trans-unit>
+             <trans-unit id="label.options">
+                    <source>label.options</source>
+                    <target>Options</target>
+             </trans-unit>
+             <trans-unit id="label.delete">
+                    <source>label.delete</source>
+                    <target>delete</target>
+             </trans-unit>
+             <trans-unit id="label.edit">
+                    <source>label.edit</source>
+                    <target>edit</target>
+             </trans-unit>
+             <trans-unit id="label.admin.panel">
+                    <source>label.admin.panel</source>
+                    <target>Back to Admin Panel</target>
+             </trans-unit>
+             <trans-unit id="label.grade">
+                    <source>label.grade</source>
+                    <target>Grade</target>
+             </trans-unit>
+             <trans-unit id="label.comment">
+                    <source>label.comment</source>
+                    <target>Comments:</target>
+             </trans-unit>
+             <trans-unit id="label.go.back">
+                    <source>label.go.back</source>
+                    <target>Go back to your photos</target>
+             </trans-unit>
+             <trans-unit id="label.edit.photo.details">
+                    <source>label.edit.photo.details</source>
+                    <target>Edit your photo deteails:</target>
+             </trans-unit>
+             <trans-unit id="label.bad">
+                    <source>label.bad</source>
+                    <target>I don't like it!</target>
+             </trans-unit>
+             <trans-unit id="label.poor">
+                    <source>label.poor</source>
+                    <target>Poor :|</target>
+             </trans-unit>
+             <trans-unit id="label.average">
+                    <source>label.average</source>
+                    <target>Average...</target>
+             </trans-unit>
+             <trans-unit id="label.good">
+                    <source>label.good</source>
+                    <target>I like it!</target>
+             </trans-unit>
+             <trans-unit id="label.excelent">
+                    <source>label.excelent</source>
+                    <target>Excellent ;)</target>
+             </trans-unit>
+             <trans-unit id="message.element_successfully_added">
+                    <source>message.element_successfully_added</source>
+                    <target>Element successfully added!</target>
+             </trans-unit>
+             <trans-unit id="user.data">
+                     <source>user.data</source>
+                     <target>Personal details</target>
+             </trans-unit>
+             <trans-unit id="user.password">
+                     <source>user.password</source>
+                     <target>Change user password:</target>
+             </trans-unit>
+             <trans-unit id="user.login">
+                     <source>user.login</source>
+                     <target>Login</target>
+             </trans-unit>
+             <trans-unit id="label.actions">
+                     <source>label.actions</source>
+                     <target>Submit</target>
+             </trans-unit>
+             <trans-unit id="label.nav.prev">
+                     <source>label.nav.prev</source>
+                     <target>Previous</target>
+             </trans-unit>
+             <trans-unit id="role.label">
+                      <source>role.label</source>
+                      <target>Roles</target>
+             </trans-unit>
+             <trans-unit id="label.user">
+                       <source>label.user</source>
+                       <target>user</target>
+             </trans-unit>
+             <trans-unit id="label.admin">
+                       <source>label.admin</source>
+                       <target>admin</target>
+             </trans-unit>
+             <trans-unit id="message.password_edited">
+                       <source>message.password_edited</source>
+                       <target>Password sucessfully changed!</target>
+             </trans-unit>
+            <trans-unit id="message.personal_data_edited">
+                       <source>message.personal_data_edited</source>
+                       <target>Personal data sucessfully edited!</target>
+            </trans-unit>
+            <trans-unit id="label.nav.next">
+                       <source>label.nav.next</source>
+                       <target>next</target>
+            </trans-unit>
+            <trans-unit id="message.authorization_denied">
+                       <source>message.authorization_denied</source>
+                       <target>You must be authorized to delete/adit photo!</target>
+            </trans-unit>
+            <trans-unit id="message.tag_successfully_deleted">
+                       <source>message.tag_successfully_deleted</source>
+                       <target>Tag succesfully deleted!</target>
+            </trans-unit>
+            <trans-unit id="message.tag_successfully_added">
+                       <source>message.tag_successfully_added</source>
+                       <target>Tag has been added!</target>
+            </trans-unit>
+            <trans-unit id="label.repeat_password">
+                       <source>label.repeat_password</source>
+                       <target>Repeat password:</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

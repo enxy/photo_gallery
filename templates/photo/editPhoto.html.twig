@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div id="container">
+    <h3>{{ 'label.edit.photo.details'|trans }}</h3><br/><br/><br/><br/>
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><strong>Photo id:</strong> {{ photo.idPhoto }}</div><br><br>
+                <strong>Date added: {{ photo.date_added }}</strong>    <br><br>
+                <strong>Last modified: {{ photo.date_edited }}</strong>   <br><br>
+                <strong>Description:</strong> {{ photo.description }}  <br><br>
+                <strong>Is public:</strong>  {% if photo.is_public==0 %} No {% else %} Yes {% endif %}  <br><br>
+            {{ form_start(form1, { method: 'post', action: url('edit_photo', {'id': photo.idPhoto}) }) }}  <br><br>
+            {{ form_widget(form1) }}
+            <input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-success" />
+            {{ form_end(form1) }}
+            </div>
+        </div>
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">{{ 'label.tags'|trans }}</div>
+            <ul>
+                {% for tag in tagNames  %}
+                     <li>{{ tag.name }} <a href="{{ path('remove_tag', {'id': id, 'tag':tag.tagId}) }}"><input type="button" value="{{ 'label.delete'|trans }}" class="btn btn-danger"></a></li>
+                {% endfor %}
+            </ul>
+                {{ form_start(form2, { method: 'post', action: url('add_tag', {'id': photo.idPhoto}) }) }}  <br><br>
+                {{ form_widget(form2) }}
+                    <input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-success" />
+                {{ form_end(form2) }}
+            </div>
+        </div>
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">{{ 'label.comment'|trans }}</div>
+                {% for data in commentData %}
+                    <div><strong><em>Posted by:  </em></strong> {{ data.comment.username }}<strong><em> on {{ data.comment.dateAdded }}
+                           {% if is_granted('ROLE_ADMIN') %}
+                                <a href="{{ url('delete_comment', {'comment':data.comment.idComment, 'id': id}) }}"> <input type="submit" value="{{ 'label.delete'|trans }}" class="btn btn-success" /></a></em></strong><br/>
+                            {% endif %}
+                        {{ data.comment.comment }}</div><br><br>
+                {% endfor %}
+        </div>
+    </div>
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('user_index') }}"><button>{{ 'label.back_to_list'|trans }}</button></a><br/><br/><br/>
+    {% endif %}
+{%  endblock %}
